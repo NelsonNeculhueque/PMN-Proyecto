@@ -3,7 +3,7 @@ function Login() {
   const [usuario, setUsuario] = useState('');
   const [mensaje, setMensaje] = useState('');
   const ingresar = () => {
-    setMensaje(usuario.toLowerCase() === 'admin' ? 'Acceso concedido' : 'Usuario no reconocido');
+    setMensaje(usuario.toLowerCase() === 'Empleado' ? 'Acceso concedido' : 'Usuario no reconocido');
   };
   return (
     <div>

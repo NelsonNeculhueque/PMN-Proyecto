@@ -1,11 +1,10 @@
   import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
   import './App.css'; 
   import Panel from './components/Panel';
-  import Cursos from './components/Cursos';
-  import CursoDetalle from './components/Detalle-Cursos';
-  import Calendario from './components/Calendario';
-  import CatalogoCursos from './components/Catalogo';
-  import NotasAlumno from './components/Notas';
+  import Cursos from './components/Cursos/Cursos';
+  import Calendario from './components/Calendario/Calendario';
+  import CatalogoCursos from './components/Catalogo/Catalogo';
+  import NotasAlumno from './components/Notas/Notas';
   import Login from './components/Login';
 
   function App() {
@@ -19,7 +18,7 @@
               <Link to="/cursos/">Cursos</Link>
               <Link to="/calendario">Calendario</Link>
               <Link to="/catalogo">Catalogo de Cursos</Link>
-              <Link to="/notas/123">Notas</Link>  
+              <Link to="/notas">Notas</Link>  
               <Link to="/Login">Login</Link>
             </nav>
           </aside>
@@ -28,10 +27,9 @@
             <Routes>
               <Route path="/panel" element={<Panel />} />
               <Route path="/cursos" element={<Cursos />} />
-              <Route path="/curso/:id" element={<CursoDetalle />} />
               <Route path="/calendario" element={<Calendario />} /> 
               <Route path="/catalogo" element={<CatalogoCursos />} />
-              <Route path="/notas/:alumnoId" element={<NotasAlumno />} />
+              <Route path="/notas" element={<NotasAlumno />} />
               <Route path="/Login" element={<Login />} />
             </Routes>
           </main>
