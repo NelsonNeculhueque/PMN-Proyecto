@@ -28,6 +28,32 @@
   color: #61dafb;
 }
 
+
+.app-container {
+  display: flex;
+  min-height: 100vh;
+}
+
+.sidebar {
+  width: 220px;
+  padding: 20px;
+  background-color: #f0f0f0;
+}
+
+.sidebar h1 {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.sidebar nav {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.main-content{ flex: 1;
+  padding: 20px }
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
