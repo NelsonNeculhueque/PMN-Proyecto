@@ -1,17 +1,30 @@
-import React, { useState } from 'react';
-function Login() {
-  const [usuario, setUsuario] = useState('');
-  const [mensaje, setMensaje] = useState('');
-  const ingresar = () => {
-    setMensaje(usuario.toLowerCase() === 'Empleado' ? 'Acceso concedido' : 'Usuario no reconocido');
+import React from 'react';
+import './Login.css';
+
+function Login({ onLogin }) {
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    onLogin();
   };
+
   return (
-    <div>
-      <h2>Login</h2>
-      <input placeholder="Usuario" value={usuario} onChange={e => setUsuario(e.target.value)} />
-      <button onClick={ingresar}>Ingresar</button>
-      <p>{mensaje}</p>
+    <div className="login-container">
+      <h2>Iniciar sesión</h2>
+      <form onSubmit={handleSubmit}>
+        <input 
+          type="text" 
+          placeholder="Usuario" 
+          required
+        />
+        <input 
+          type="password" 
+          placeholder="Contraseña" 
+          required
+        />
+        <button type="submit">Ingresar</button>
+      </form>
     </div>
   );
 }
+
 export default Login;

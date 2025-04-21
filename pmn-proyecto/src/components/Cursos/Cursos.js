@@ -1,11 +1,12 @@
 import React from 'react';
-import MisCursos from './Lista-cursos';
+import CursosLista from './Lista-cursos';
+import './Cursos.css';
 
 function Cursos() {
   return (
-    <div>
+    <div className="dashboard">
       <h3>Mis cursos</h3>
-      <MisCursos /> 
+      <CursosLista />
     </div>
   );
 }

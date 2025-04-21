@@ -7,7 +7,7 @@ function FiltroCursos({ filtro, setFiltro }) {
       placeholder="Filtrar cursos..."
       value={filtro}
       onChange={(e) => setFiltro(e.target.value)}
-      style={{ marginBottom: '1rem', padding: '0.5rem', width: '100%' }}
+      className="filtro-input"
     />
   );
 }

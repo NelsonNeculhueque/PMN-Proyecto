@@ -1,19 +1,17 @@
-import React, { useState } from 'react';
+import React from 'react';
+import './Panel.css'; 
 
 function Curso({ nombre, descripcion }) {
-  const [inscrito, setInscrito] = useState(false);
-
   const handleInscribir = () => {
-    setInscrito(true);
-    alert(`${nombre} inscrito exitosamente`);  
+    alert(`Te has inscrito en el curso: ${nombre}`);
   };
 
   return (
-    <div>
+    <div className="curso-card">
       <h4>{nombre}</h4>
       <p>{descripcion}</p>
-      <button onClick={handleInscribir} disabled={inscrito}>
-        {inscrito ? 'Inscrito' : 'Inscribir'}
+      <button className="inscribir-btn" onClick={handleInscribir}>
+        Inscribirse
       </button>
     </div>
   );
