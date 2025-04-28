@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route, Link, Navigate } from 'react-router-dom';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import './App.css'; 
 import Panel from './components/Panel';
 import Cursos from './components/Cursos/Cursos';
@@ -11,12 +11,24 @@ import Login from './components/Login';
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
+  // Cargar el estado de inicio de sesión desde localStorage
+  useEffect(() => {
+    const storedLoginState = localStorage.getItem('isLoggedIn');
+    if (storedLoginState === 'true') {
+      setIsLoggedIn(true);
+    }
+  }, []);
+
   const handleLogin = () => {
     setIsLoggedIn(true);
+    localStorage.setItem('isLoggedIn', 'true'); 
   };
 
   const handleLogout = () => {
     setIsLoggedIn(false);
+    localStorage.removeItem('isLoggedIn'); 
+    localStorage.removeItem('inscripciones'); 
+    alert('Has cerrado sesión');
   };
 
   return (

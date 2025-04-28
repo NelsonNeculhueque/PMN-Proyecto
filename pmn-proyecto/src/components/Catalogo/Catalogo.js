@@ -1,28 +1,38 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import FiltroCursos from './FiltroCursos';
-import './CatalogoCursos.css'; 
+import { cursos } from '../../data/cursos'; 
+import './CatalogoCursos.css';
 
 function CatalogoCursos() {
   const [filtro, setFiltro] = useState('');
+  const [cursosFiltrados, setCursosFiltrados] = useState(cursos); 
+  const [cargando, setCargando] = useState(true);
 
-  const cursos = [
-    { nombre: 'Curso de React Básico', descripcion: 'Aprende los fundamentos de React.' },
-    { nombre: 'Curso de JavaScript Avanzado', descripcion: 'Profundiza en conceptos avanzados de JavaScript.' },
-    { nombre: 'Curso de Python para Principiantes', descripcion: 'Introducción a la programación con Python.' },
-  ];
+  useEffect(() => {
+    setTimeout(() => {
+      setCargando(false);
+    }, 1500);
+  }, []);
 
-  const cursosFiltrados = cursos.filter((curso) =>
-    curso.nombre.toLowerCase().includes(filtro.toLowerCase())
-  );
+  useEffect(() => {
+    
+    setCursosFiltrados(
+      cursos.filter((curso) =>
+        curso.nombre.toLowerCase().includes(filtro.toLowerCase())
+      )
+    );
+  }, [filtro]); 
 
   return (
     <div className="catalogo-container">
       <h3>Catálogo de cursos disponibles</h3>
       <FiltroCursos filtro={filtro} setFiltro={setFiltro} />
 
-      {cursosFiltrados.length > 0 ? (
-        cursosFiltrados.map((curso, index) => (
-          <div key={index} className="curso">
+      {cargando ? (
+        <p>Cargando cursos...</p>
+      ) : cursosFiltrados.length > 0 ? (
+        cursosFiltrados.map((curso) => (
+          <div key={curso.id} className="curso">
             <h4>{curso.nombre}</h4>
             <p>{curso.descripcion}</p>
           </div>

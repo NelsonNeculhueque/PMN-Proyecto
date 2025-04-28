@@ -1,9 +1,9 @@
-import React from 'react';
-import './Panel.css'; 
+import './Panel.css';
 
-function Curso({ nombre, descripcion }) {
+function Curso({ nombre, descripcion, onInscribir }) {
   const handleInscribir = () => {
-    alert(`Te has inscrito en el curso: ${nombre}`);
+    onInscribir(); 
+    alert(`Te has inscrito en el curso: ${nombre}`); 
   };
 
   return (
