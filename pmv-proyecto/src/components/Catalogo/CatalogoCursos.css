@@ -1,0 +1,49 @@
+.catalogo-container {
+    width: 90%; 
+    margin: 2rem auto 2rem 2rem; 
+    padding: 1.5rem;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    font-family: Arial, sans-serif;
+  }
+  
+  .catalogo-container h3 {
+    text-align: left; 
+    margin-bottom: 1.5rem;
+    color: #333;
+  }
+  
+  .filtro-input {
+    display: block;
+    margin-bottom: 1.5rem;
+    padding: 0.7rem;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+  }
+  
+  .curso {
+    background-color: #fff;
+    padding: 1rem;
+    border-radius: 6px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    margin-bottom: 1rem;
+  }
+  
+  .curso h4 {
+    margin: 0 0 0.5rem;
+    color: #222;
+  }
+  
+  .curso p {
+    margin: 0;
+    color: #555;
+  }
+  
+  .no-result {
+    text-align: left;
+    color: #999;
+  }
+  
