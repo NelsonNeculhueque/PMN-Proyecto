@@ -1,7 +1,7 @@
 // backend/routes/auth.js
 const express = require('express');
 const router = express.Router();
-const { connectDB } = require('../mongo'); // ✅ Corrige esta ruta si estaba mal
+const { connectDB } = require('../mongo');
 
 router.post('/login', async (req, res) => {
   const { usuario, contraseña } = req.body;

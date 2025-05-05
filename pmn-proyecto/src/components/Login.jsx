@@ -1,6 +1,7 @@
 // frontend/Login.js
 import React, { useState } from 'react';
 import './Login.css';
+import { login } from '../api/auth';  // Importa la función de login
 
 function Login({ onLogin }) {
   const [usuario, setUsuario] = useState('');
@@ -14,23 +15,11 @@ function Login({ onLogin }) {
     setIsLoading(true); // Indicamos que está cargando la solicitud
 
     try {
-      const response = await fetch('http://localhost:4000/login', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ usuario, contraseña }),
-      });
+      const data = await login(usuario, contraseña);  // Llama a la función de login
 
-      const data = await response.json();
-
-      if (response.ok) { // Verificamos si el status es 200-299
-        onLogin(); // Si la respuesta es exitosa, llamamos a onLogin
-      } else {
-        setError(data.mensaje || 'Credenciales incorrectas'); // Muestra el mensaje de error
-      }
+      onLogin(); // Si el login es exitoso, llamamos a onLogin
     } catch (error) {
-      setError('Hubo un error en la conexión con el servidor');
+      setError(error.message); // Muestra el error si la solicitud falla
     } finally {
       setIsLoading(false); // Terminamos el loading después de la petición
     }
