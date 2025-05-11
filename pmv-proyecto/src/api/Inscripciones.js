@@ -10,7 +10,7 @@ export const inscribirCurso = async (usuario, cursoId) => {
       }
   
       // Realiza la solicitud POST para inscribir al usuario
-      const response = await fetch("http://localhost:4000/api/inscribir/inscribir", {
+      const response = await fetch("https://pmv-backend.vercel.app/api/inscribir/inscribir", {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ usuarioId: usuario.id, cursoId }), // Asumiendo que 'usuario' tiene un id

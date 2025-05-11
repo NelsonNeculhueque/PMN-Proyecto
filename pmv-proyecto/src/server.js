@@ -18,5 +18,5 @@ app.use('/api/inscribir', inscripcionesRoutes);
 
 // Iniciar servidor
 app.listen(4000, () => {
-  console.log('🚀 Servidor backend escuchando en http://localhost:4000');
+  console.log('🚀 Servidor backend escuchando en https://pmv-backend.vercel.app');
 });
