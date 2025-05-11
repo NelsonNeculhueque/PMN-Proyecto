@@ -1,7 +1,7 @@
 // src/api/api.js
 export const fetchCursos = async () => {
   try {
-    const response = await fetch('https://pmv-backend.vercel.app/api/cursos/cursos');
+    const response = await fetch('https://pmv-desarrollo.onrender.com/api/cursos/cursos');
     if (!response.ok) {
       throw new Error('Error al obtener los cursos');
     }
