@@ -1,7 +1,9 @@
+/* Box-sizing global */
 * {
   box-sizing: border-box;
 }
 
+/* Estilo general del dashboard */
 .dashboard {
   padding: 20px;
   background-color: #f9f9fb;
@@ -12,57 +14,64 @@
   align-items: center;
 }
 
+/* Título del dashboard */
 .dashboard h3 {
-  font-size: 1.8rem;
+  font-size: 2rem;
   font-weight: 600;
   color: #222;
   margin-bottom: 30px;
   text-align: center;
 }
 
+/* Contenedor de cursos con grid responsivo */
 .cursos-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 30px;
-  justify-items: center;
   width: 100%;
   max-width: 1200px;
   padding: 20px;
+  justify-items: center;
 }
 
+/* Tarjeta de curso */
 .curso-card {
-  background-color: white;
+  background-color: #fff;
   padding: 30px;
   border-radius: 8px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   width: 100%;
-  max-width: 350px;
-  height: 350px;
+  max-width: 400px;
+  height: auto;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
 
+/* Efecto hover */
 .curso-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
 }
 
+/* Título del curso */
 .curso-card h4 {
   font-size: 1.4rem;
   font-weight: 500;
   color: #444;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
 }
 
+/* Descripción */
 .curso-card p {
   font-size: 1.1rem;
   color: #666;
   line-height: 1.5;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
 }
 
+/* Barra de progreso */
 .progress-bar-container {
   background-color: #e0e0e0;
   border-radius: 6px;
@@ -82,4 +91,73 @@
   font-size: 0.9rem;
   color: #555;
   text-align: right;
+}
+
+/* Media Queries */
+
+/* Pantallas medianas (tabletas y laptops pequeñas) */
+@media (max-width: 1024px) {
+  .dashboard h3 {
+    font-size: 1.6rem;
+  }
+
+  .curso-card {
+    max-width: 90%;
+    padding: 25px;
+  }
+
+  .curso-card h4 {
+    font-size: 1.3rem;
+  }
+
+  .curso-card p {
+    font-size: 1rem;
+  }
+}
+
+/* Pantallas pequeñas (móviles) */
+@media (max-width: 768px) {
+  .dashboard h3 {
+    font-size: 1.4rem;
+  }
+
+  .curso-card {
+    padding: 20px;
+    max-width: 100%;
+  }
+
+  .curso-card h4 {
+    font-size: 1.2rem;
+  }
+
+  .curso-card p {
+    font-size: 0.95rem;
+  }
+
+  .curso-progreso {
+    font-size: 0.8rem;
+  }
+}
+
+/* Móviles muy pequeños */
+@media (max-width: 480px) {
+  .dashboard h3 {
+    font-size: 1.2rem;
+  }
+
+  .curso-card {
+    padding: 15px;
+  }
+
+  .curso-card h4 {
+    font-size: 1.1rem;
+  }
+
+  .curso-card p {
+    font-size: 0.9rem;
+  }
+
+  .curso-progreso {
+    font-size: 0.75rem;
+  }
 }

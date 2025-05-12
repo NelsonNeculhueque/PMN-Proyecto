@@ -1,20 +1,10 @@
-import mongoose from 'mongoose';
+const mongoose = require('mongoose');
 
 const inscripcionSchema = new mongoose.Schema({
-  usuario: {
-    type: String,
-    required: true,
-  },
-  cursoId: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'Curso',
-    required: true,
-  },
-  fechaInscripcion: {
-    type: Date,
-    default: Date.now,
-  },
-});
+  usuario: { type: String, required: true },
+  cursoId: { type: String, required: true },
+  cursoNombre: { type: String, required: true },
+  cursoDescripcion: { type: String, required: true },
+}, { timestamps: true });
 
-const Inscripcion = mongoose.model('Inscripcion', inscripcionSchema);
-export default Inscripcion;
+module.exports = mongoose.model('Inscripcion', inscripcionSchema, 'inscribir');

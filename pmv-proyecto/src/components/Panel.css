@@ -1,73 +1,131 @@
-
 .dashboard {
-    padding: 20px;
-    background-color: #f9f9fb;
-    font-family: 'Arial', sans-serif;
-    color: #333;
+  padding: 20px;
+  background-color: #f9f9fb;
+  font-family: 'Arial', sans-serif;
+  color: #333;
+}
+
+.dashboard h3 {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #222;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.dashboard .curso-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Tres columnas por defecto */
+  gap: 30px;
+  justify-items: center;
+  padding: 20px;
+  grid-template-rows: repeat(3, 1fr);
+  max-width: 100%;
+}
+
+.curso-card {
+  background-color: white;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 100%;
+  max-width: 400px;
+  height: 350px;
+}
+
+.curso-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+}
+
+.curso-card h4 {
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: #444;
+  margin-bottom: 15px;
+}
+
+.curso-card p {
+  font-size: 1.1rem;
+  color: #666;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+.curso-card .inscribir-btn {
+  margin-top: auto;
+  padding: 12px 24px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+
+.curso-card .inscribir-btn:hover {
+  background-color: #0056b3;
+}
+
+/* Media Queries para hacerlo responsivo */
+@media (max-width: 1024px) {
+  .dashboard .curso-container {
+    grid-template-columns: repeat(2, 1fr); /* 2 columnas en pantallas medianas */
+  }
+
+  .curso-card {
+    max-width: 90%; /* Las tarjetas serán más pequeñas en pantallas medianas */
+    height: auto;  /* Ajustar la altura de las tarjetas */
   }
 
   .dashboard h3 {
-    font-size: 1.6rem;
-    font-weight: 600;
-    color: #222;
-    margin-bottom: 30px;
-    text-align: center;
+    font-size: 1.4rem; /* Reducir tamaño del texto en pantallas medianas */
   }
+}
 
+@media (max-width: 768px) {
   .dashboard .curso-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); 
-    gap: 30px; 
-    justify-items: center;
-    padding: 20px;
-    grid-template-rows: repeat(3, 1fr); 
-    max-width: 100%;
+    grid-template-columns: 1fr; /* 1 columna en pantallas pequeñas */
   }
-  
 
   .curso-card {
-    background-color: white;
-    padding: 30px; 
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    width: 100%;
-    max-width: 400px; 
-    height: 350px; 
+    max-width: 100%; /* Las tarjetas ocupan todo el ancho disponible */
+    height: auto;  /* Ajustar la altura de las tarjetas */
   }
-  
-  .curso-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+
+  .dashboard h3 {
+    font-size: 1.2rem; /* Reducir tamaño del texto en pantallas pequeñas */
   }
-  
+
   .curso-card h4 {
-    font-size: 1.4rem;
-    font-weight: 500;
-    color: #444;
-    margin-bottom: 15px;
+    font-size: 1.2rem; /* Reducir el tamaño de los títulos */
   }
-  
+
   .curso-card p {
-    font-size: 1.1rem;
-    color: #666;
-    line-height: 1.5;
-    margin-bottom: 20px;
+    font-size: 1rem; /* Reducir el tamaño de los textos */
   }
-  
+}
+
+@media (max-width: 480px) {
+  .dashboard h3 {
+    font-size: 1rem; /* Asegurar que el tamaño del título sea pequeño en pantallas muy pequeñas */
+  }
+
+  .curso-card {
+    padding: 20px; /* Reducir padding en tarjetas */
+  }
+
+  .curso-card h4 {
+    font-size: 1rem; /* Reducir tamaño de título */
+  }
+
+  .curso-card p {
+    font-size: 0.9rem; /* Reducir tamaño del texto */
+  }
+
   .curso-card .inscribir-btn {
-    margin-top: auto;
-    padding: 12px 24px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    font-weight: 500;
-    transition: background-color 0.3s ease;
+    padding: 10px 20px; /* Ajustar el tamaño del botón */
   }
-  
-  .curso-card .inscribir-btn:hover {
-    background-color: #0056b3;
-  }
-  
+}

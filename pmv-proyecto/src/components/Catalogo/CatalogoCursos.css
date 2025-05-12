@@ -1,49 +1,113 @@
+/* Estilo básico */
 .catalogo-container {
-    width: 90%; 
-    margin: 2rem auto 2rem 2rem; 
-    padding: 1.5rem;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    background-color: #f9f9f9;
-    font-family: Arial, sans-serif;
+  width: 90%;
+  margin: 2rem auto 2rem 2rem;
+  padding: 1.5rem;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background-color: #f9f9f9;
+  font-family: Arial, sans-serif;
+}
+
+.catalogo-container h3 {
+  text-align: left;
+  margin-bottom: 1.5rem;
+  color: #333;
+}
+
+.filtro-input {
+  display: block;
+  margin-bottom: 1.5rem;
+  padding: 0.7rem;
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.curso {
+  background-color: #fff;
+  padding: 1rem;
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  margin-bottom: 1rem;
+}
+
+.curso h4 {
+  margin: 0 0 0.5rem;
+  color: #222;
+}
+
+.curso p {
+  margin: 0;
+  color: #555;
+}
+
+.no-result {
+  text-align: left;
+  color: #999;
+}
+
+/* Media Queries para hacerlo responsivo */
+
+/* Para pantallas pequeñas y medianas */
+@media (max-width: 1024px) {
+  .catalogo-container {
+    width: 100%; /* Hace que ocupe todo el ancho disponible */
+    margin: 1rem auto; /* Ajusta el margen */
   }
-  
+
   .catalogo-container h3 {
-    text-align: left; 
-    margin-bottom: 1.5rem;
-    color: #333;
+    font-size: 1.6rem; /* Ajusta el tamaño del título */
   }
-  
+
   .filtro-input {
-    display: block;
-    margin-bottom: 1.5rem;
-    padding: 0.7rem;
-    width: 100%;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 1rem;
+    font-size: 0.9rem; /* Ajusta el tamaño del input */
   }
-  
+
   .curso {
-    background-color: #fff;
-    padding: 1rem;
-    border-radius: 6px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-    margin-bottom: 1rem;
+    padding: 1rem; /* Mantiene un padding apropiado */
   }
-  
-  .curso h4 {
-    margin: 0 0 0.5rem;
-    color: #222;
+}
+
+/* Para pantallas más pequeñas (móviles grandes) */
+@media (max-width: 768px) {
+  .catalogo-container {
+    margin: 1rem auto; /* Ajusta el margen */
+    padding: 1rem; /* Ajusta el padding */
   }
-  
-  .curso p {
-    margin: 0;
-    color: #555;
+
+  .catalogo-container h3 {
+    font-size: 1.4rem; /* Ajusta el tamaño del título */
   }
-  
-  .no-result {
-    text-align: left;
-    color: #999;
+
+  .filtro-input {
+    font-size: 0.9rem; /* Ajusta el tamaño del input */
   }
-  
+
+  .curso {
+    padding: 0.8rem; /* Ajusta el padding */
+  }
+}
+
+/* Para pantallas más pequeñas (móviles pequeños) */
+@media (max-width: 480px) {
+  .catalogo-container {
+    width: 100%;
+    margin: 0.5rem auto; /* Ajusta el margen */
+    padding: 0.8rem; /* Ajusta el padding */
+  }
+
+  .catalogo-container h3 {
+    font-size: 1.2rem; /* Ajusta el tamaño del título */
+  }
+
+  .filtro-input {
+    font-size: 0.8rem; /* Ajusta el tamaño del input */
+  }
+
+  .curso {
+    padding: 0.7rem; /* Ajusta el padding */
+  }
+}
+
